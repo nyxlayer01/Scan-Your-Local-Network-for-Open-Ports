@@ -1,0 +1,73 @@
+
+Note:- All the scans are done in a secure custom vulnerable environment for better 
+       understanding of different ports.
+                  
+->Nmap scan report for 192.168.111.2
+
+Ports:-
+
+ -53:-	The service which runs on this port is DNS(Domain Name System).	
+        It is vulnerable to DDoS attack.
+        Information leakage can also occure.
+
+
+->Nmap scan report for 192.168.111.129
+
+Ports:-
+
+ -21:- The service which runs on this port is FTP(File Transfer Protocol).        
+       It is a insecure protocol.
+       It sends the data and passwords in plaintext which attacker can use to later exploit the system.
+
+ -22:- The service which runs on this port is SSH(Secure SHell).        
+       It is vulnerable to brute-force attacks if we dont't use strong passwords.
+       Attacker can get secure remote access of the system.
+
+ -23:- The service which runs on this port is Telnet.    
+       It is extremely insecure and outdated.
+       The login is done in plaintext.                       
+
+ -25:- The service which runs on this port is SMTP(Simple Mail Transfer Protocol).
+       Can be used for spam if open relay.                                   
+       It can be enumerated by an attacker if improperly secured.
+
+ -53:- The service which runs on this port is DNS(Domaain Name System). 
+       It is vulnerable to DDoS attack.
+       Information leakagecan also occur.                   
+
+ -80:- The service which runs on this port is HTTP(Hyper Text Transfer Protocol).
+       It may expose a web application such as login, admin, etc. 
+       It is vulnerable to various web attacks such as XSS.                
+
+ -139/445:- The service which runs on this port is SMB(Server Message Block).
+            It is frequently used for ransomware (e.g., EternalBlue), or MITM and so on.                   
+
+ -3306:- The service which runs on this port is MySQL.
+         Database can be exposed to an attacker.
+         SQL injection risk.                                  
+
+ -5432:- The service which runs on this port is PostgreSQL. 
+         Another common Database port
+         same risk as above.                             
+
+ -5900:- The service which runs on this port is VNC(Virtual Network COmputing). 
+         It can be very risky if unencrypted.       
+         It can give remote access of the system to the attacker.                       
+
+ -6000:- The service which runs on this port is X11.
+         Attacker can spy on GUI sessions as well as can log keystrokes.                       
+
+ -8009:- The service which runs on this port is AJP13.
+         It is used by Apache HTTP Server to communicate with backend application servers.
+         It is vulnerable to **Ghostcat RCE** if exposed.                              
+
+ -8180:- The service which runs on this port is unknown.
+         It can be used as a backdoor for the attackers to enter the system.
+
+
+->Nmap scan report for 192.168.111.130
+
+Ports:-     
+
+ -5357:- The service which is running on this port is wsdapi(Web Services for Devices API).
+         Attacker can perform  Information Disclosure, Internal Reconnaissance, Privilege Escalation, MITM, etc.
